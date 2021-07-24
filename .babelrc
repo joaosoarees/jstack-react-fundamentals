@@ -1,0 +1,4 @@
+{
+  // Make transpilation
+  "presets": ["@babel/preset-env"]
+}

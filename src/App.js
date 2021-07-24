@@ -3,6 +3,24 @@ import React from 'react';
 import { Header } from './Header';
 import { Post } from './Post';
 
+const posts = [
+  {
+    title: 'Title#01',
+    subTitle: 'Subtitle#01',
+    likes: 15,
+  },
+  {
+    title: 'Title#01',
+    subTitle: 'Subtitle#01',
+    likes: 20,
+  },
+  {
+    title: 'Title#01',
+    subTitle: 'Subtitle#01',
+    likes: 30,
+  },
+];
+
 export function App() {
   return (
     <>
@@ -12,21 +30,16 @@ export function App() {
 
       <hr />
 
-      <Post
-        likes={20}
-        post={{
-          title: 'Título da notícia 01',
-          subTitle: 'Subtítulo da notícia 01'
-        }}
-      />
-
-      <Post
-        likes={50}
-        post={{
-          title: 'Título da notícia 02',
-          subTitle: 'Subtítulo da notícia 02'
-        }}
-      />
+      {posts.map(post => (
+        <Post
+          key={Math.random()}
+          likes={post.likes}
+          post={{
+            title: post.title,
+            subTitle: post.subTitle
+          }}
+        />
+      ))}
     </>
   );
 };

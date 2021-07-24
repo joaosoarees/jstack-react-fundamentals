@@ -3,3 +3,4 @@
 
 ### Webpack bundle generator
 - `yarn build` -> generate a bundle of the application to `build` folder.
+- `yarn dev` -> webpack creates a server for development environment.

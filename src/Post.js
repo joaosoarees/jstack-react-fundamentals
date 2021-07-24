@@ -4,10 +4,15 @@ import PropTypes from 'prop-types';
 import { PostHeader } from './PostHeader';
 
 // Props -> (Properties) -> Propriedades
-export function Post({ post, onRemove }) {
+export function Post({ post, onRemove, theme }) {
   return (
     <>
-      <PostHeader onRemove={onRemove} post={post} />
+      <PostHeader 
+        theme={theme}
+        onRemove={onRemove}
+        post={post}
+      />
+      
       <article>
         <small>{post.subTitle}</small> <br />
 
@@ -26,4 +31,5 @@ Post.propTypes = {
     likes: PropTypes.number.isRequired,
   }).isRequired,
   onRemove: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
 };

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import { Button } from './Button';
 
-export function PostHeader({ post, onRemove }) {
+export function PostHeader({ theme, post, onRemove }) {
 	return (
 		<>
 			<strong>
 				{post.read ? <s>{post.title}</s> : post.title}
 			</strong>
 
-			<Button onClick={() => onRemove(post.id)}>
+			<Button theme={theme} onClick={() => onRemove(post.id)}>
 				Remover
 			</Button>
 		</>
@@ -24,4 +24,5 @@ PostHeader.propTypes = {
 		read: PropTypes.bool.isRequired,
 	}).isRequired,
 	onRemove: PropTypes.func.isRequired,
- };
+  theme: PropTypes.string.isRequired,
+};

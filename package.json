@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn babel src -d build"
+    "build": "babel src -d build"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",

@@ -5,8 +5,8 @@ import { Post } from './Post';
 
 export function App() {
   const [posts, setPosts] = useState([
-    { id: 1, title: 'Title#02', subTitle: 'Subtitle#02', likes: 20 },
-    { id: 2, title: 'Title#01', subTitle: 'Subtitle#01', likes: 15 },
+    { id: 1, title: 'Title#02', subTitle: 'Subtitle#02', likes: 20, read: false },
+    { id: 2, title: 'Title#01', subTitle: 'Subtitle#01', likes: 15, read: true },
   ]);
 
   function handleRefresh() {
@@ -41,13 +41,8 @@ export function App() {
       {posts.map(post => (
         <Post
           key={post.id}
-          likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            id: post.id,
-            title: post.title,
-            subTitle: post.subTitle
-          }}
+          post={post}
         />
       ))}
     </>

@@ -1,19 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { PostHeader } from './PostHeader';
+
 // Props -> (Properties) -> Propriedades
 export function Post({ post, onRemove }) {
   return (
     <>
+      <PostHeader onRemove={onRemove} post={post} />
       <article>
-        <strong>
-          {post.read ? <s>{post.title}</s> : post.title}
-        </strong>
-
-        <button onClick={() => onRemove(post.id)}>
-          Remover
-        </button> <br />
-
         <small>{post.subTitle}</small> <br />
 
         Likes: {post.likes}
@@ -29,7 +24,6 @@ Post.propTypes = {
     title: PropTypes.string.isRequired,
     subTitle: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired,
-    read: PropTypes.bool.isRequired,
   }).isRequired,
   onRemove: PropTypes.func.isRequired,
 };

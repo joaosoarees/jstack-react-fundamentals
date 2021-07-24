@@ -9,20 +9,22 @@ export function App() {
     { id: 2, title: 'Title#01', subTitle: 'Subtitle#01', likes: 15 },
   ]);
 
-  console.log({posts})
-
   function handleRefresh() {
-    setTimeout(() => {
-      setPosts((prevState) => [
-        ...prevState,
-        {
-          id: prevState.length + 1,
-          title: `Title#0${prevState.length + 1}`,
-          subTitle: `Subtitle#0${prevState.length + 1}`,
-          likes: 50
-        }
-      ])
-    }, 2000);
+    setPosts((prevState) => [
+      ...prevState,
+      {
+        id: prevState.length + 1,
+        title: `Title#0${prevState.length + 1}`,
+        subTitle: `Subtitle#0${prevState.length + 1}`,
+        likes: 50
+      }
+    ]);
+  };
+
+  function handleRemovePost(postId) {
+    setPosts((prevState) => (
+      prevState.filter(post => post.id !== postId)
+    ))
   }
 
   return (
@@ -40,7 +42,9 @@ export function App() {
         <Post
           key={post.id}
           likes={post.likes}
+          onRemove={handleRemovePost}
           post={{
+            id: post.id,
             title: post.title,
             subTitle: post.subTitle
           }}

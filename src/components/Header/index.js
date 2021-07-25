@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import { ThemeContext } from './ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 
-import { Button } from './Button';
+import { Button } from '../Button';
 
 import styles from './Header.scss';
 export function Header({ title, children }) {

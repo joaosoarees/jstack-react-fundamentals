@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { PostHeader } from './PostHeader';
 
 import styles from './Post.scss';
+import * as S from './styles';
 
 // Props -> (Properties) -> Propriedades
 export function Post({ post, onRemove }) {
@@ -19,8 +20,9 @@ export function Post({ post, onRemove }) {
         onRemove={onRemove}
         post={post}
       />
-      <small>{post.subTitle}</small> <br />
-      Likes: {post.likes}
+
+      <S.Subtitle>{post.subTitle}</S.Subtitle>
+      <S.Rate>Likes: {post.likes}</S.Rate>
     </article>
   );
 };

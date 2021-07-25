@@ -3,27 +3,20 @@ import PropTypes from 'prop-types';
 
 import { PostHeader } from './PostHeader';
 
-import styles from './Post.scss';
 import * as S from './styles';
 
 // Props -> (Properties) -> Propriedades
 export function Post({ post, onRemove }) {
   return (
-    <article 
-      className={
-        post.removed
-          ? styles.postDeleted
-          : styles.post
-      }
-    >
-      <PostHeader 
+    <S.Container removed={post.removed}>
+      <PostHeader
         onRemove={onRemove}
         post={post}
       />
 
       <S.Subtitle>{post.subTitle}</S.Subtitle>
       <S.Rate>Likes: {post.likes}</S.Rate>
-    </article>
+    </S.Container>
   );
 };
 

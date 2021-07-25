@@ -5,6 +5,8 @@ import { ThemeProvider } from './ThemeContext';
 import { Header } from './Header';
 import { Post } from './Post';
 
+import styles from './App.css';
+
 export function App() {
   const [posts, setPosts] = useState([
     { id: Math.random(), title: 'Title#02', subTitle: 'Subtitle#02', likes: 20, read: false },
@@ -33,7 +35,7 @@ export function App() {
   return (
     <ThemeProvider>
       <Header>
-        <h2>
+        <h2 className={styles.title}>
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>
         </h2>

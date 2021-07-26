@@ -6,17 +6,11 @@ import Layout from './components/Layout';
 
 import themes from './styles/themes';
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      theme: 'dark',
-    };
-
-    this.handleToggleTheme = this.handleToggleTheme.bind(this);
+  state = {
+    theme: 'dark',
   };
 
-  handleToggleTheme() {
+  handleToggleTheme = () => {
     this.setState(prevState => ({ 
       theme: prevState.theme === 'dark' ? 'light' : 'dark'
     }));
